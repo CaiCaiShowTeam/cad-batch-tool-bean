@@ -126,4 +126,141 @@ public class CadDocument implements DetailModel, AttachmentModel {
     public List<? extends Serializable> getDetail() {
 	return details;
     }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getSource() {
+        return source;
+    }
+
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
+
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        this.material = material;
+    }
+
+    public String getPartSize() {
+        return partSize;
+    }
+
+    public void setPartSize(String partSize) {
+        this.partSize = partSize;
+    }
+
+    public String getUnitModel() {
+        return unitModel;
+    }
+
+    public void setUnitModel(String unitModel) {
+        this.unitModel = unitModel;
+    }
+
+    public String getWeight() {
+        return weight;
+    }
+
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    public String getProportion() {
+        return proportion;
+    }
+
+    public void setProportion(String proportion) {
+        this.proportion = proportion;
+    }
+
+    public String getSheet() {
+        return sheet;
+    }
+
+    public void setSheet(String sheet) {
+        this.sheet = sheet;
+    }
+
+    public String getPageIndex() {
+        return pageIndex;
+    }
+
+    public void setPageIndex(String pageIndex) {
+        this.pageIndex = pageIndex;
+    }
+
+    public String getPageSize() {
+        return pageSize;
+    }
+
+    public void setPageSize(String pageSize) {
+        this.pageSize = pageSize;
+    }
+
+    public String getKeyIdentity() {
+        return keyIdentity;
+    }
+
+    public void setKeyIdentity(String keyIdentity) {
+        this.keyIdentity = keyIdentity;
+    }
+
+    public String getPartType() {
+        return partType;
+    }
+
+    public void setPartType(String partType) {
+        this.partType = partType;
+    }
+
+    public List<CADLink> getDetails() {
+        return details;
+    }
+
+    public void setDetails(List<CADLink> details) {
+        this.details = details;
+    }
+
+    @Override
+    public String toString() {
+	StringBuilder builder = new StringBuilder ();
+	builder.append ("CadDocument [number=").append (number).append (", name=").append (name).append (", source=")
+		.append (source).append (", model=").append (model).append (", material=").append (material)
+		.append (", partSize=").append (partSize).append (", unitModel=").append (unitModel)
+		.append (", weight=").append (weight).append (", proportion=").append (proportion).append (", sheet=")
+		.append (sheet).append (", pageIndex=").append (pageIndex).append (", pageSize=").append (pageSize)
+		.append (", keyIdentity=").append (keyIdentity).append (", partType=").append (partType)
+		.append (", attachments=").append (attachments).append (", details=").append (details).append ("]");
+	return builder.toString ();
+    }
+
+    
+    
+    
 }

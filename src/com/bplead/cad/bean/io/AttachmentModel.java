@@ -5,8 +5,8 @@ import java.util.List;
 
 public interface AttachmentModel extends Serializable {
 
-	public List<Attachment> getAttachments();
+    public List<Attachment> getAttachments();
 
-	public void setAttachments(List<Attachment> attachments);
+    public void setAttachments(List<Attachment> attachments);
 
 }

@@ -7,53 +7,52 @@ import priv.lee.cad.util.ClientAssert;
 
 public class Attachment implements Serializable {
 
-	private static final long serialVersionUID = -3298431148287587866L;
-	private String absolutePath;
-	private String name;
-	private boolean primary;
-	
-	public Attachment() {
-		
-	}
+    private static final long serialVersionUID = -3298431148287587866L;
+    private String absolutePath;
+    private String name;
+    private boolean primary;
 
-	public Attachment(File file, boolean primary) {
-		ClientAssert.notNull(file, "File is required");
+    public Attachment() {
+    }
 
-		this.name = file.getName();
-		this.primary = primary;
-		this.absolutePath = file.getAbsolutePath();
-	}
+    public Attachment(File file, boolean primary) {
+	ClientAssert.notNull (file,"File is required");
 
-	public Attachment(String name, boolean primary, String absolutePath) {
-		ClientAssert.hasText(name, "Name is required");
-		ClientAssert.hasText(absolutePath, "Absolute path is required");
+	this.name = file.getName ();
+	this.primary = primary;
+	this.absolutePath = file.getAbsolutePath ();
+    }
 
-		this.name = name;
-		this.primary = primary;
-		this.absolutePath = absolutePath;
-	}
+    public Attachment(String name, boolean primary, String absolutePath) {
+	ClientAssert.hasText (name,"Name is required");
+	ClientAssert.hasText (absolutePath,"Absolute path is required");
 
-	public String getAbsolutePath() {
-		return absolutePath;
-	}
+	this.name = name;
+	this.primary = primary;
+	this.absolutePath = absolutePath;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getAbsolutePath() {
+	return absolutePath;
+    }
 
-	public boolean isPrimary() {
-		return primary;
-	}
+    public String getName() {
+	return name;
+    }
 
-	public void setAbsolutePath(String absolutePath) {
-		this.absolutePath = absolutePath;
-	}
+    public boolean isPrimary() {
+	return primary;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setAbsolutePath(String absolutePath) {
+	this.absolutePath = absolutePath;
+    }
 
-	public void setPrimary(boolean primary) {
-		this.primary = primary;
-	}
+    public void setName(String name) {
+	this.name = name;
+    }
+
+    public void setPrimary(boolean primary) {
+	this.primary = primary;
+    }
 }
