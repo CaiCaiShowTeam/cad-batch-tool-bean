@@ -5,6 +5,6 @@ import java.util.List;
 
 public interface DetailModel {
 
-	public List<? extends Serializable> getDetail();
+    public List<? extends Serializable> getDetail();
 
 }

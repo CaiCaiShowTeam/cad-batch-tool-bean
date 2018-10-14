@@ -15,7 +15,7 @@ import priv.lee.cad.util.XmlUtils;
  * for xml cad.xml
  */
 @JacksonXmlRootElement(localName = "cad")
-public class CadDocuments implements Serializable{
+public class CadDocuments implements Serializable {
 
     private static final long serialVersionUID = -2529832353034651499L;
 
@@ -36,4 +36,5 @@ public class CadDocuments implements Serializable{
     public void setCadDocs(List<CadDocument> cadDocs) {
         this.cadDocs = cadDocs;
     }
+
 }

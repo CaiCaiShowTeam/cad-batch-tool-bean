@@ -62,84 +62,83 @@ public class CADLink implements Serializable {
     }
 
     public String getOrder() {
-        return order;
+	return order;
     }
 
     public void setOrder(String order) {
-        this.order = order;
+	this.order = order;
     }
 
     public String getNumber() {
-        return number;
+	return number;
     }
 
     public void setNumber(String number) {
-        this.number = number;
+	this.number = number;
     }
 
     public String getName() {
-        return name;
+	return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+	this.name = name;
     }
 
     public String getQuantity() {
-        return quantity;
+	return quantity;
     }
 
     public void setQuantity(String quantity) {
-        this.quantity = quantity;
+	this.quantity = quantity;
     }
 
     public String getUnit() {
-        return unit;
+	return unit;
     }
 
     public void setUnit(String unit) {
-        this.unit = unit;
+	this.unit = unit;
     }
 
     public String getWeight() {
-        return weight;
+	return weight;
     }
 
     public void setWeight(String weight) {
-        this.weight = weight;
+	this.weight = weight;
     }
 
     public String getModel() {
-        return model;
+	return model;
     }
 
     public void setModel(String model) {
-        this.model = model;
+	this.model = model;
     }
 
     public String getKeyIdentity() {
-        return keyIdentity;
+	return keyIdentity;
     }
 
     public void setKeyIdentity(String keyIdentity) {
-        this.keyIdentity = keyIdentity;
+	this.keyIdentity = keyIdentity;
     }
 
     public String getPartSize() {
-        return partSize;
+	return partSize;
     }
 
     public void setPartSize(String partSize) {
-        this.partSize = partSize;
+	this.partSize = partSize;
     }
 
     public String getUnitModel() {
-        return unitModel;
+	return unitModel;
     }
 
     public void setUnitModel(String unitModel) {
-        this.unitModel = unitModel;
+	this.unitModel = unitModel;
     }
 
-    
 }
