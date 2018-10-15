@@ -10,38 +10,37 @@ import priv.lee.cad.model.ClientTemporary;
 public class Container implements ClientTemporary, Serializable {
 
     private static final long serialVersionUID = -7944261537208682106L;
+    private SimpleContainer container;
     private SimpleFolder folder;
-    private SimpleContainer product;
 
     public Container() {
-
     }
 
-    public Container(SimpleContainer product, SimpleFolder folder) {
-	this.product = product;
+    public Container(SimpleContainer container, SimpleFolder folder) {
+	this.container = container;
 	this.folder = folder;
+    }
+
+    public SimpleContainer getContainer() {
+	return container;
     }
 
     public SimpleFolder getFolder() {
 	return folder;
     }
 
-    public SimpleContainer getProduct() {
-	return product;
+    public void setContainer(SimpleContainer container) {
+	this.container = container;
     }
 
     public void setFolder(SimpleFolder folder) {
 	this.folder = folder;
     }
 
-    public void setProduct(SimpleContainer product) {
-	this.product = product;
-    }
-
     @Override
     public String toString() {
 	StringBuilder builder = new StringBuilder ();
-	builder.append ("Container [folder=").append (folder).append (", product=").append (product).append ("]");
+	builder.append ("Container [folder=").append (folder).append (", container=").append (container).append ("]");
 	return builder.toString ();
     }
 

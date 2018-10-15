@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bplead.cad.annotation.IbaField;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 /**
@@ -34,55 +35,66 @@ public class CadDocument implements DetailModel, AttachmentModel {
      * cad:原材料规格/外构件规格 plm:Windchill原材料规格
      */
     @JacksonXmlProperty(localName = "materialModel")
+    @IbaField(target="EPMDocument", ibaName="model")
     private String model;
     /**
      * cad:原材料代码/图纸代号 plm:Windchill原材料物料编码
      */
     @JacksonXmlProperty(localName = "materialNum")
+    @IbaField(target="EPMDocument", ibaName="material")
     private String material;
     /**
      * cad:零件尺寸 plm:source为自制件时，无该属性
      */
     @JacksonXmlProperty(localName = "partSize")
+    @IbaField(target="EPMDocument", ibaName="partSize")
     private String partSize;
     /**
      * cad:机组型号
      */
     @JacksonXmlProperty(localName = "unitModel")
+    @IbaField(target="EPMDocument", ibaName="unitModel")
     private String unitModel;
     /**
      * cad:重量
      */
     @JacksonXmlProperty(localName = "weight")
+    @IbaField(target="EPMDocument", ibaName="weight")
     private String weight;
     /**
      * cad:比例 plm:Windchill中无对应属性
      */
     @JacksonXmlProperty(localName = "proportion")
+    @IbaField(target="EPMDocument", ibaName="proportion")
     private String proportion;
     /**
      * cad:图幅
      */
     @JacksonXmlProperty(localName = "size")
+    @IbaField(target="EPMDocument", ibaName="sheet")
     private String sheet;
     /**
      * cad:页码 plm:Windchill中无对应属性
      */
     @JacksonXmlProperty(localName = "pageIndex")
+    @IbaField(target="EPMDocument", ibaName="pageIndex")
     private String pageIndex;
     /**
      * cad:总页码 plm:Windchill中无对应属性
      */
     @JacksonXmlProperty(localName = "pageSize")
+    @IbaField(target="EPMDocument", ibaName="pageSize")
     private String pageSize;
     /**
      * cad:关键件标识
      */
     @JacksonXmlProperty(localName = "keyIdentity")
+    @IbaField(target="EPMDocument", ibaName="keyIdentity")
     private String keyIdentity;
     /**
      * cad:零部件类型 plm:source为外购件时，无该属性
      */
+    @IbaField(target="EPMDocument", ibaName="")
     @JacksonXmlProperty(localName = "partType")
     private String partType;
     /**
