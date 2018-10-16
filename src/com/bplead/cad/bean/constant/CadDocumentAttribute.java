@@ -6,7 +6,7 @@ public class CadDocumentAttribute {
 	 * 外购件图号
 	 * 代号
 	 */
-	public static final String NUMBER = "number";
+//	public static final String NUMBER = "number";
 	/**
 	 * 原材料规格
 	 * 外构件规格
@@ -28,7 +28,7 @@ public class CadDocumentAttribute {
 	 * 图纸名称
 	 * 零部件名称
 	 */
-	public static final String NAME = "name";
+//	public static final String NAME = "name";
 	/**
 	 * 机组型号
 	 */
@@ -59,7 +59,7 @@ public class CadDocumentAttribute {
 	public static final String KEYIDENTITY  = "keyIdentity";
 	/**
 	 * 零部件类型
-	 */
+//	 */
 	public static final String PARTTYPE = "partType";
 	/**
 	 * 产品容器
