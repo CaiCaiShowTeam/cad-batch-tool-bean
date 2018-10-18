@@ -55,4 +55,12 @@ public class Attachment implements Serializable {
     public void setPrimary(boolean primary) {
 	this.primary = primary;
     }
+
+    @Override
+    public String toString() {
+	StringBuilder builder = new StringBuilder ();
+	builder.append ("Attachment [absolutePath=").append (absolutePath).append (", name=").append (name)
+		.append (", primary=").append (primary).append ("]");
+	return builder.toString ();
+    }
 }

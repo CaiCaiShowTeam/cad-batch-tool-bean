@@ -16,4 +16,12 @@ public class Documents implements Serializable {
     public void setDocuments(List<Document> documents) {
         this.documents = documents;
     }
+
+    @Override
+    public String toString() {
+	StringBuilder builder = new StringBuilder ();
+	builder.append ("Documents [documents=").append (documents).append ("]");
+	return builder.toString ();
+    }
+    
 }

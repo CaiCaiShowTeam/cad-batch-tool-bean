@@ -37,4 +37,11 @@ public class CadDocuments implements Serializable {
         this.cadDocs = cadDocs;
     }
 
+    @Override
+    public String toString() {
+	StringBuilder builder = new StringBuilder ();
+	builder.append ("CadDocuments [cadDocs=").append (cadDocs).append ("]");
+	return builder.toString ();
+    }
+
 }

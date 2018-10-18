@@ -74,4 +74,13 @@ public class Document extends SimpleDocument {
 	this.relatedPart = relatedPart;
     }
 
+    @Override
+    public String toString() {
+	StringBuilder builder = new StringBuilder ();
+	builder.append ("Document [buildBom=").append (buildBom).append (", buildType=").append (buildType)
+		.append (", container=").append (container).append (", object=").append (object)
+		.append (", relatedPart=").append (relatedPart).append ("]");
+	return builder.toString ();
+    }
+
 }

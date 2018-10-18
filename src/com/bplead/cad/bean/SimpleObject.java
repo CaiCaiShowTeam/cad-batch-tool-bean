@@ -5,8 +5,11 @@ import java.io.Serializable;
 public class SimpleObject implements Serializable {
 
     private static final long serialVersionUID = -1831133151236580050L;
+
     private String name;
+
     private String oid;
+
     private boolean selected = false;
 
     public SimpleObject() {

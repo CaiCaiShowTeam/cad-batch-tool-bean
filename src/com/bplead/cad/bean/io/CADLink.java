@@ -141,4 +141,16 @@ public class CADLink implements Serializable {
 	this.unitModel = unitModel;
     }
 
+    @Override
+    public String toString() {
+	StringBuilder builder = new StringBuilder ();
+	builder.append ("CADLink [order=").append (order).append (", number=").append (number).append (", name=")
+		.append (name).append (", quantity=").append (quantity).append (", unit=").append (unit)
+		.append (", weight=").append (weight).append (", model=").append (model).append (", keyIdentity=")
+		.append (keyIdentity).append (", partSize=").append (partSize).append (", unitModel=")
+		.append (unitModel).append ("]");
+	return builder.toString ();
+    }
+
+
 }
