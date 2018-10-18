@@ -26,8 +26,8 @@ public class RemoteMethod extends RMIMethod {
 	
 	public static final String EXPORT_DETAIL_LISTENNER = "exportDetailListenner";
 	
-	public static final String CANCLE_CHECKOUT_LISTENNER = "cancleCheckoutListenner";
+	public static final String UNDO_CHECKOUT_LISTENNER = "undoCheckoutListenner";
 	
-	public static final String CHECKOUT_DOWNLOAD_LISTENNER = "checkoutAndDownloadListener";
+	public static final String CHECKOUT_LISTENNER = "checkoutListener";
 	
 }

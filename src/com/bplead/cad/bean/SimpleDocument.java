@@ -4,7 +4,7 @@ public class SimpleDocument extends SimpleObject {
 
     private static final long serialVersionUID = -5452305568516411601L;
 
-    private Boolean editEnable = false;
+    private Boolean editEnable;
 
     private String number;
 
