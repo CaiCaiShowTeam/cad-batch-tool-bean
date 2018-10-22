@@ -10,7 +10,7 @@ package com.bplead.cad.bean.io;
  */
 public enum CadStatus {
     
-    NOT_EXIST("创建","notExist"),
+    NOT_EXIST("新建","notExist"),
     CHECK_OUT("检出","checkout"),
     CHECK_IN("检入","checkin");
     
