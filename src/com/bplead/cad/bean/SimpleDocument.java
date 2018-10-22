@@ -1,10 +1,12 @@
 package com.bplead.cad.bean;
 
+import com.bplead.cad.bean.io.CadStatus;
+
 public class SimpleDocument extends SimpleObject {
 
     private static final long serialVersionUID = -5452305568516411601L;
 
-    private Boolean editEnable;
+    private CadStatus cadStatus = CadStatus.NOT_EXIST;
 
     private String number;
 
@@ -16,28 +18,29 @@ public class SimpleDocument extends SimpleObject {
 	this.number = number;
     }
 
-    public Boolean getEditEnable() {
-	return editEnable;
-    }
-
     public String getNumber() {
 	return number;
-    }
-
-    public void setEditEnable(Boolean editEnable) {
-	this.editEnable = editEnable;
     }
 
     public void setNumber(String number) {
 	this.number = number;
     }
 
+    public CadStatus getCadStatus() {
+        return cadStatus;
+    }
+
+    public void setCadStatus(CadStatus cadStatus) {
+        this.cadStatus = cadStatus;
+    }
+
     @Override
     public String toString() {
 	StringBuilder builder = new StringBuilder ();
-	builder.append ("SimpleDocument [editEnable=").append (editEnable).append (", number=").append (number)
+	builder.append ("SimpleDocument [cadStatus=").append (cadStatus).append (", number=").append (number)
+		.append (", getName()=").append (getName ()).append (", getOid()=").append (getOid ())
+		.append (", isSelected()=").append (isSelected ()).append (", hashCode()=").append (hashCode ())
 		.append ("]");
 	return builder.toString ();
     }
-
 }
