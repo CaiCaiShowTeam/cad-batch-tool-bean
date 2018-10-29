@@ -10,7 +10,6 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * @author zjw
  * 2018年10月15日下午3:35:02
  */
 @Retention(RetentionPolicy.RUNTIME)

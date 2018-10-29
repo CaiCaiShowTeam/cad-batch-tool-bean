@@ -7,7 +7,6 @@ import com.bplead.cad.annotation.IbaField;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 /**
- * @author zjw
  * 2018年10月7日上午10:59:09
  * for xml cad.xml
  */

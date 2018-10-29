@@ -10,7 +10,6 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import priv.lee.cad.util.XmlUtils;
 
 /**
- * @author zjw
  * 2018年10月7日上午10:59:09
  * for xml cad.xml
  */

@@ -5,7 +5,6 @@
 package com.bplead.cad.bean.io;
 
 /**
- * @author zjw
  * 2018年10月22日下午1:18:50
  */
 public enum CadStatus {
