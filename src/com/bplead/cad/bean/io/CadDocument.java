@@ -95,8 +95,8 @@ public class CadDocument implements DetailModel, AttachmentModel {
      * cad:零部件类型 plm:source为外购件时，无该属性
      */
     @JacksonXmlProperty(localName = "partType")
-    @IbaField(target="EPMDocument", ibaName="partType", panelAttr=true)
-    private String partType;
+    @IbaField(target="EPMDocument", ibaName="wtpartType", panelAttr=true)
+    private String wtpartType;
     /**
      * cad:附件列表
      */
@@ -247,12 +247,12 @@ public class CadDocument implements DetailModel, AttachmentModel {
         this.keyIdentity = keyIdentity;
     }
 
-    public String getPartType() {
-        return partType;
+    public String getWtpartType() {
+        return wtpartType;
     }
 
-    public void setPartType(String partType) {
-        this.partType = partType;
+    public void setWtpartType(String wtpartType) {
+        this.wtpartType = wtpartType;
     }
 
     @Override
@@ -263,10 +263,9 @@ public class CadDocument implements DetailModel, AttachmentModel {
 		.append (", partSize=").append (partSize).append (", unitModel=").append (unitModel)
 		.append (", weight=").append (weight).append (", proportion=").append (proportion).append (", sheet=")
 		.append (sheet).append (", pageIndex=").append (pageIndex).append (", pageSize=").append (pageSize)
-		.append (", keyIdentity=").append (keyIdentity).append (", partType=").append (partType)
+		.append (", keyIdentity=").append (keyIdentity).append (", wtpartType=").append (wtpartType)
 		.append (", attachments=").append (attachments).append (", detail=").append (detail).append ("]");
 	return builder.toString ();
     }
-
     
 }
