@@ -16,6 +16,6 @@ import java.lang.annotation.Target;
 @Target( { ElementType.FIELD})
 public @interface IbaField {
     String target() default "EPMDocument";
-    String ibaName() ;
+    String ibaName() default "default";
     boolean panelAttr() default false;
 }
