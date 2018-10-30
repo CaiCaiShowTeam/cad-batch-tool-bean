@@ -32,8 +32,10 @@ public class SimpleFolder extends SimpleObject implements ClientTemporary {
     @Override
     public String toString() {
 	StringBuilder builder = new StringBuilder ();
-	builder.append ("SimpleFolder [children=").append (children).append ("]");
+	builder.append ("SimpleFolder [children=").append (children).append (", getName()=").append (getName ())
+		.append (", getOid()=").append (getOid ()).append (", isSelected()=").append (isSelected ())
+		.append ("]");
 	return builder.toString ();
     }
-
+    
 }
