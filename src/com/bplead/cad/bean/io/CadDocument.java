@@ -1,13 +1,12 @@
 package com.bplead.cad.bean.io;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.bplead.cad.annotation.IbaField;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 /**
- * @author zjw
  * 2018年10月7日上午10:59:09
  * for xml cad.xml
  */
@@ -18,12 +17,14 @@ public class CadDocument implements DetailModel, AttachmentModel {
     /**
      * cad:图纸代号/外购件图号 plm:
      */
+    
     @JacksonXmlProperty(isAttribute = true, localName = "number")
     private String number;
     /**
      * cad:图纸名称
      */
     @JacksonXmlProperty(isAttribute = true, localName = "name")
+    @IbaField(panelAttr=true)
     private String name;
     /**
      * cad:自制件/外购件
@@ -34,57 +35,68 @@ public class CadDocument implements DetailModel, AttachmentModel {
      * cad:原材料规格/外构件规格 plm:Windchill原材料规格
      */
     @JacksonXmlProperty(localName = "materialModel")
+    @IbaField(target="EPMDocument,WTPart", ibaName="model", panelAttr=true)
     private String model;
     /**
      * cad:原材料代码/图纸代号 plm:Windchill原材料物料编码
      */
     @JacksonXmlProperty(localName = "materialNum")
+    @IbaField(target="EPMDocument,WTPart", ibaName="material", panelAttr=true)
     private String material;
     /**
      * cad:零件尺寸 plm:source为自制件时，无该属性
      */
     @JacksonXmlProperty(localName = "partSize")
+    @IbaField(target="EPMDocument,WTPart", ibaName="partSize", panelAttr=true)
     private String partSize;
     /**
      * cad:机组型号
      */
     @JacksonXmlProperty(localName = "unitModel")
+    @IbaField(target="EPMDocument,WTPart", ibaName="unitModel", panelAttr=true)
     private String unitModel;
     /**
      * cad:重量
      */
     @JacksonXmlProperty(localName = "weight")
+    @IbaField(target="EPMDocument,WTPart", ibaName="weight", panelAttr=true)
     private String weight;
     /**
      * cad:比例 plm:Windchill中无对应属性
      */
     @JacksonXmlProperty(localName = "proportion")
+    @IbaField(target="EPMDocument,WTPart", ibaName="proportion", panelAttr=true)
     private String proportion;
     /**
      * cad:图幅
      */
     @JacksonXmlProperty(localName = "size")
+    @IbaField(target="EPMDocument,WTPart", ibaName="sheet",panelAttr=true)
     private String sheet;
     /**
      * cad:页码 plm:Windchill中无对应属性
      */
     @JacksonXmlProperty(localName = "pageIndex")
+    @IbaField(target="EPMDocument,WTPart", ibaName="pageIndex")
     private String pageIndex;
     /**
      * cad:总页码 plm:Windchill中无对应属性
      */
     @JacksonXmlProperty(localName = "pageSize")
+    @IbaField(target="EPMDocument,WTPart", ibaName="pageSize", panelAttr=true)
     private String pageSize;
     /**
      * cad:关键件标识
      */
     @JacksonXmlProperty(localName = "keyIdentity")
+    @IbaField(target="EPMDocument,WTPart", ibaName="keyIdentity", panelAttr=true)
     private String keyIdentity;
     /**
      * cad:零部件类型 plm:source为外购件时，无该属性
      */
     @JacksonXmlProperty(localName = "partType")
-    private String partType;
+    @IbaField(target="EPMDocument,WTPart", ibaName="wtpartType", panelAttr=true)
+    private String wtpartType;
     /**
      * cad:附件列表
      */
@@ -94,7 +106,7 @@ public class CadDocument implements DetailModel, AttachmentModel {
      * cad:cad bom details
      */
     @JacksonXmlProperty(localName = "detail")
-    private List<CADLink> details = new ArrayList<CADLink> ();
+    private List<CADLink> detail = new ArrayList<CADLink> ();
 
     /*
      * (non-Javadoc)
@@ -123,8 +135,12 @@ public class CadDocument implements DetailModel, AttachmentModel {
      * @see com.bplead.cad.bean.io.DetailModel#getDetail()
      */
     @Override
-    public List<? extends Serializable> getDetail() {
-	return details;
+    public List<CADLink> getDetail() {
+	return detail;
+    }
+    
+    public void setDetails(List<CADLink> detail) {
+        this.detail = detail;
     }
 
     public String getNumber() {
@@ -231,20 +247,12 @@ public class CadDocument implements DetailModel, AttachmentModel {
         this.keyIdentity = keyIdentity;
     }
 
-    public String getPartType() {
-        return partType;
+    public String getWtpartType() {
+        return wtpartType;
     }
 
-    public void setPartType(String partType) {
-        this.partType = partType;
-    }
-
-    public List<CADLink> getDetails() {
-        return details;
-    }
-
-    public void setDetails(List<CADLink> details) {
-        this.details = details;
+    public void setWtpartType(String wtpartType) {
+        this.wtpartType = wtpartType;
     }
 
     @Override
@@ -255,12 +263,9 @@ public class CadDocument implements DetailModel, AttachmentModel {
 		.append (", partSize=").append (partSize).append (", unitModel=").append (unitModel)
 		.append (", weight=").append (weight).append (", proportion=").append (proportion).append (", sheet=")
 		.append (sheet).append (", pageIndex=").append (pageIndex).append (", pageSize=").append (pageSize)
-		.append (", keyIdentity=").append (keyIdentity).append (", partType=").append (partType)
-		.append (", attachments=").append (attachments).append (", details=").append (details).append ("]");
+		.append (", keyIdentity=").append (keyIdentity).append (", wtpartType=").append (wtpartType)
+		.append (", attachments=").append (attachments).append (", detail=").append (detail).append ("]");
 	return builder.toString ();
     }
-
-    
-    
     
 }

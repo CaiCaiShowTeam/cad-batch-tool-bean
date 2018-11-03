@@ -49,4 +49,13 @@ public class DataContent implements Serializable {
     public void setTransfered(boolean transfered) {
 	this.transfered = transfered;
     }
+
+    @Override
+    public String toString() {
+	StringBuilder builder = new StringBuilder ();
+	builder.append ("DataContent [clientFile=").append (clientFile).append (", serverFile=").append (serverFile)
+		.append (", shareDirectory=").append (shareDirectory).append (", transfered=").append (transfered)
+		.append ("]");
+	return builder.toString ();
+    }
 }
