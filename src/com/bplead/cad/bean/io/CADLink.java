@@ -10,7 +10,7 @@ public class CADLink implements Serializable {
     /**
      * 序号
      */
-    @JacksonXmlProperty(localName = "order")
+    @JacksonXmlProperty(localName = "sn")
     private String order;
     /**
      * 图纸代号/外购件图号
@@ -28,129 +28,101 @@ public class CADLink implements Serializable {
     @JacksonXmlProperty(localName = "quantity")
     private String quantity;
     /**
-     * 单位
+     * 明细栏材料规格
      */
-    @JacksonXmlProperty(localName = "unit")
-    private String unit;
+    @JacksonXmlProperty(localName = "materialModel")
+    private String materialModel;
     /**
-     * 总重
+     * 单件重量
      */
-    @JacksonXmlProperty(localName = "weight")
-    private String weight;
+    @JacksonXmlProperty(localName = "sigletonWeight")
+    private String sigletonWeight;
     /**
-     * 规格
+     * 总重量
      */
-    @JacksonXmlProperty(localName = "model")
-    private String model;
+    @JacksonXmlProperty(localName = "totalWeight")
+    private String totalWeight;
     /**
-     * 关键件标识
+     * 描述
      */
-    @JacksonXmlProperty(localName = "keyIdentity")
-    private String keyIdentity;
-    /**
-     * 规零件尺寸
-     */
-    @JacksonXmlProperty(localName = "partSize")
-    private String partSize;
-    /**
-     * 机组型号
-     */
-    @JacksonXmlProperty(localName = "unitModel")
-    private String unitModel;
+    @JacksonXmlProperty(localName = "desciption")
+    private String desciption;
 
     public CADLink() {
     }
 
     public String getOrder() {
-	return order;
+        return order;
     }
 
     public void setOrder(String order) {
-	this.order = order;
+        this.order = order;
     }
 
     public String getNumber() {
-	return number;
+        return number;
     }
 
     public void setNumber(String number) {
-	this.number = number;
+        this.number = number;
     }
 
     public String getName() {
-	return name;
+        return name;
     }
 
     public void setName(String name) {
-	this.name = name;
+        this.name = name;
     }
 
     public String getQuantity() {
-	return quantity;
+        return quantity;
     }
 
     public void setQuantity(String quantity) {
-	this.quantity = quantity;
+        this.quantity = quantity;
     }
 
-    public String getUnit() {
-	return unit;
+    public String getMaterialModel() {
+        return materialModel;
     }
 
-    public void setUnit(String unit) {
-	this.unit = unit;
+    public void setMaterialModel(String materialModel) {
+        this.materialModel = materialModel;
     }
 
-    public String getWeight() {
-	return weight;
+    public String getSigletonWeight() {
+        return sigletonWeight;
     }
 
-    public void setWeight(String weight) {
-	this.weight = weight;
+    public void setSigletonWeight(String sigletonWeight) {
+        this.sigletonWeight = sigletonWeight;
     }
 
-    public String getModel() {
-	return model;
+    public String getTotalWeight() {
+        return totalWeight;
     }
 
-    public void setModel(String model) {
-	this.model = model;
+    public void setTotalWeight(String totalWeight) {
+        this.totalWeight = totalWeight;
     }
 
-    public String getKeyIdentity() {
-	return keyIdentity;
+    public String getDesciption() {
+        return desciption;
     }
 
-    public void setKeyIdentity(String keyIdentity) {
-	this.keyIdentity = keyIdentity;
-    }
-
-    public String getPartSize() {
-	return partSize;
-    }
-
-    public void setPartSize(String partSize) {
-	this.partSize = partSize;
-    }
-
-    public String getUnitModel() {
-	return unitModel;
-    }
-
-    public void setUnitModel(String unitModel) {
-	this.unitModel = unitModel;
+    public void setDesciption(String desciption) {
+        this.desciption = desciption;
     }
 
     @Override
     public String toString() {
 	StringBuilder builder = new StringBuilder ();
 	builder.append ("CADLink [order=").append (order).append (", number=").append (number).append (", name=")
-		.append (name).append (", quantity=").append (quantity).append (", unit=").append (unit)
-		.append (", weight=").append (weight).append (", model=").append (model).append (", keyIdentity=")
-		.append (keyIdentity).append (", partSize=").append (partSize).append (", unitModel=")
-		.append (unitModel).append ("]");
+		.append (name).append (", quantity=").append (quantity).append (", materialModel=")
+		.append (materialModel).append (", sigletonWeight=").append (sigletonWeight).append (", totalWeight=")
+		.append (totalWeight).append (", desciption=").append (desciption).append ("]");
 	return builder.toString ();
     }
-
 
 }
