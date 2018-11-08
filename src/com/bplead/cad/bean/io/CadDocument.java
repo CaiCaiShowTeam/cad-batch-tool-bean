@@ -7,96 +7,86 @@ import com.bplead.cad.annotation.IbaField;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 
 /**
- * 2018年10月7日上午10:59:09
- * for xml cad.xml
+ * 2018年10月7日上午10:59:09 for xml cad.xml
  */
 public class CadDocument implements DetailModel, AttachmentModel {
 
     private static final long serialVersionUID = -7830531959700927185L;
 
     /**
-     * cad:图纸代号/外购件图号 plm:
+     * cad:图纸代号/外购件图号 plm:代号
      */
-    
     @JacksonXmlProperty(isAttribute = true, localName = "number")
+    @IbaField(target = "EPMDocument,WTPart", ibaName = "CINDEX")
     private String number;
     /**
-     * cad:图纸名称
+     * cad:图纸名称 plm:零部件名称
      */
     @JacksonXmlProperty(isAttribute = true, localName = "name")
-    @IbaField(panelAttr=true)
+    @IbaField(target = "EPMDocument,WTPart", ibaName = "CNAME", panelAttr = true)
     private String name;
     /**
-     * cad:自制件/外购件
+     * cad:零部件类型
      */
-    @JacksonXmlProperty(isAttribute = true, localName = "source")
+    @JacksonXmlProperty(isAttribute = true, localName = "type")
+    @IbaField(target = "EPMDocument,WTPart", ibaName = "SOURCE_MADE", panelAttr = true)
     private String source;
     /**
-     * cad:原材料规格/外构件规格 plm:Windchill原材料规格
+     * cad:原材料规格/外构件规格 plm:原材料规格
      */
     @JacksonXmlProperty(localName = "materialModel")
-    @IbaField(target="EPMDocument,WTPart", ibaName="model", panelAttr=true)
+    @IbaField(target = "EPMDocument,WTPart", ibaName = "RAW_MAT_SPEC", panelAttr = true)
     private String model;
     /**
-     * cad:原材料代码/图纸代号 plm:Windchill原材料物料编码
+     * cad:原材料代码/图纸代号 plm:原材料物料编码
      */
     @JacksonXmlProperty(localName = "materialNum")
-    @IbaField(target="EPMDocument,WTPart", ibaName="material", panelAttr=true)
+    @IbaField(target = "EPMDocument,WTPart", ibaName = "MAT_CODE_YL", panelAttr = true)
     private String material;
     /**
      * cad:零件尺寸 plm:source为自制件时，无该属性
      */
     @JacksonXmlProperty(localName = "partSize")
-    @IbaField(target="EPMDocument,WTPart", ibaName="partSize", panelAttr=true)
+    @IbaField(target = "EPMDocument,WTPart", ibaName = "PART_DIMENSION", panelAttr = true)
     private String partSize;
     /**
      * cad:机组型号
      */
     @JacksonXmlProperty(localName = "unitModel")
-    @IbaField(target="EPMDocument,WTPart", ibaName="unitModel", panelAttr=true)
+    @IbaField(target = "EPMDocument,WTPart", ibaName = "UNIT_MODEL", panelAttr = true)
     private String unitModel;
     /**
      * cad:重量
      */
     @JacksonXmlProperty(localName = "weight")
-    @IbaField(target="EPMDocument,WTPart", ibaName="weight", panelAttr=true)
+    @IbaField(target = "EPMDocument,WTPart", ibaName = "CMASS", panelAttr = true)
     private String weight;
     /**
-     * cad:比例 plm:Windchill中无对应属性
+     * cad:关键件标识
+     */
+    @JacksonXmlProperty(localName = "keyIdentity")
+    @IbaField(target = "EPMDocument,WTPart", ibaName = "KEY_PART_ID", panelAttr = true)
+    private String keyIdentity;
+    /**
+     * cad:比例
      */
     @JacksonXmlProperty(localName = "proportion")
-    @IbaField(target="EPMDocument,WTPart", ibaName="proportion", panelAttr=true)
     private String proportion;
     /**
      * cad:图幅
      */
     @JacksonXmlProperty(localName = "size")
-    @IbaField(target="EPMDocument,WTPart", ibaName="sheet",panelAttr=true)
     private String sheet;
     /**
-     * cad:页码 plm:Windchill中无对应属性
+     * cad:页码
      */
     @JacksonXmlProperty(localName = "pageIndex")
-    @IbaField(target="EPMDocument,WTPart", ibaName="pageIndex")
     private String pageIndex;
     /**
-     * cad:总页码 plm:Windchill中无对应属性
+     * cad:总页码
      */
     @JacksonXmlProperty(localName = "pageSize")
-    @IbaField(target="EPMDocument,WTPart", ibaName="pageSize", panelAttr=true)
     private String pageSize;
-    /**
-     * cad:关键件标识
-     */
-    @JacksonXmlProperty(localName = "keyIdentity")
-    @IbaField(target="EPMDocument,WTPart", ibaName="keyIdentity", panelAttr=true)
-    private String keyIdentity;
-    /**
-     * cad:零部件类型 plm:source为外购件时，无该属性
-     */
-    @JacksonXmlProperty(localName = "partType")
-    @IbaField(target="EPMDocument,WTPart", ibaName="wtpartType", panelAttr=true)
-    private String wtpartType;
     /**
      * cad:附件列表
      */
@@ -138,121 +128,113 @@ public class CadDocument implements DetailModel, AttachmentModel {
     public List<CADLink> getDetail() {
 	return detail;
     }
-    
+
     public void setDetails(List<CADLink> detail) {
-        this.detail = detail;
+	this.detail = detail;
     }
 
     public String getNumber() {
-        return number;
+	return number;
     }
 
     public void setNumber(String number) {
-        this.number = number;
+	this.number = number;
     }
 
     public String getName() {
-        return name;
+	return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+	this.name = name;
     }
 
     public String getSource() {
-        return source;
+	return source;
     }
 
     public void setSource(String source) {
-        this.source = source;
+	this.source = source;
     }
 
     public String getModel() {
-        return model;
+	return model;
     }
 
     public void setModel(String model) {
-        this.model = model;
+	this.model = model;
     }
 
     public String getMaterial() {
-        return material;
+	return material;
     }
 
     public void setMaterial(String material) {
-        this.material = material;
+	this.material = material;
     }
 
     public String getPartSize() {
-        return partSize;
+	return partSize;
     }
 
     public void setPartSize(String partSize) {
-        this.partSize = partSize;
+	this.partSize = partSize;
     }
 
     public String getUnitModel() {
-        return unitModel;
+	return unitModel;
     }
 
     public void setUnitModel(String unitModel) {
-        this.unitModel = unitModel;
+	this.unitModel = unitModel;
     }
 
     public String getWeight() {
-        return weight;
+	return weight;
     }
 
     public void setWeight(String weight) {
-        this.weight = weight;
+	this.weight = weight;
     }
 
     public String getProportion() {
-        return proportion;
+	return proportion;
     }
 
     public void setProportion(String proportion) {
-        this.proportion = proportion;
+	this.proportion = proportion;
     }
 
     public String getSheet() {
-        return sheet;
+	return sheet;
     }
 
     public void setSheet(String sheet) {
-        this.sheet = sheet;
+	this.sheet = sheet;
     }
 
     public String getPageIndex() {
-        return pageIndex;
+	return pageIndex;
     }
 
     public void setPageIndex(String pageIndex) {
-        this.pageIndex = pageIndex;
+	this.pageIndex = pageIndex;
     }
 
     public String getPageSize() {
-        return pageSize;
+	return pageSize;
     }
 
     public void setPageSize(String pageSize) {
-        this.pageSize = pageSize;
+	this.pageSize = pageSize;
     }
 
     public String getKeyIdentity() {
-        return keyIdentity;
+	return keyIdentity;
     }
 
     public void setKeyIdentity(String keyIdentity) {
-        this.keyIdentity = keyIdentity;
-    }
-
-    public String getWtpartType() {
-        return wtpartType;
-    }
-
-    public void setWtpartType(String wtpartType) {
-        this.wtpartType = wtpartType;
+	this.keyIdentity = keyIdentity;
     }
 
     @Override
@@ -263,9 +245,9 @@ public class CadDocument implements DetailModel, AttachmentModel {
 		.append (", partSize=").append (partSize).append (", unitModel=").append (unitModel)
 		.append (", weight=").append (weight).append (", proportion=").append (proportion).append (", sheet=")
 		.append (sheet).append (", pageIndex=").append (pageIndex).append (", pageSize=").append (pageSize)
-		.append (", keyIdentity=").append (keyIdentity).append (", wtpartType=").append (wtpartType)
-		.append (", attachments=").append (attachments).append (", detail=").append (detail).append ("]");
+		.append (", keyIdentity=").append (keyIdentity).append (", attachments=").append (attachments)
+		.append (", detail=").append (detail).append ("]");
 	return builder.toString ();
     }
-    
+
 }

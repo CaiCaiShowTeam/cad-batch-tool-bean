@@ -11,9 +11,9 @@ public class Document extends SimpleDocument {
      */
     private Boolean buildBom = true;
     /**
-     * 构建关联关系类型,默认为7-所有者
+     * 构建关联关系类型,默认为4-图像
      */
-    private int buildType = 7;
+    private int buildType = 4;
     /**
      * 产品容器信息和文件夹信息
      */
