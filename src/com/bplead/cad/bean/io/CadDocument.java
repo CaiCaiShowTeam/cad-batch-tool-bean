@@ -17,55 +17,55 @@ public class CadDocument implements DetailModel, AttachmentModel {
      * cad:图纸代号/外购件图号 plm:代号
      */
     @JacksonXmlProperty(isAttribute = true, localName = "number")
-    @IbaField(target = "EPMDocument,WTPart", ibaName = "CINDEX")
+    @IbaField(target = "EPMDocument", ibaName = "CINDEX")
     private String number;
     /**
      * cad:图纸名称 plm:零部件名称
      */
     @JacksonXmlProperty(isAttribute = true, localName = "name")
-    @IbaField(target = "EPMDocument,WTPart", ibaName = "CNAME", panelAttr = true)
+    @IbaField(target = "EPMDocument", ibaName = "CNAME", panelAttr = true)
     private String name;
     /**
      * cad:零部件类型
      */
     @JacksonXmlProperty(isAttribute = true, localName = "type")
-    @IbaField(target = "EPMDocument,WTPart", ibaName = "SOURCE_MADE", panelAttr = true)
+    @IbaField(target = "EPMDocument", ibaName = "SOURCE_MADE", panelAttr = true)
     private String source;
     /**
      * cad:原材料规格/外构件规格 plm:原材料规格
      */
     @JacksonXmlProperty(localName = "materialModel")
-    @IbaField(target = "EPMDocument,WTPart", ibaName = "RAW_MAT_SPEC", panelAttr = true)
+    @IbaField(target = "EPMDocument", ibaName = "RAW_MAT_SPEC", panelAttr = true)
     private String model;
     /**
      * cad:原材料代码/图纸代号 plm:原材料物料编码
      */
     @JacksonXmlProperty(localName = "materialNum")
-    @IbaField(target = "EPMDocument,WTPart", ibaName = "MAT_CODE_YL", panelAttr = true)
+    @IbaField(target = "EPMDocument", ibaName = "MAT_CODE_YL", panelAttr = true)
     private String material;
     /**
      * cad:零件尺寸 plm:source为自制件时，无该属性
      */
     @JacksonXmlProperty(localName = "partSize")
-    @IbaField(target = "EPMDocument,WTPart", ibaName = "PART_DIMENSION", panelAttr = true)
+    @IbaField(target = "EPMDocument", ibaName = "PART_DIMENSION", panelAttr = true)
     private String partSize;
     /**
      * cad:机组型号
      */
     @JacksonXmlProperty(localName = "unitModel")
-    @IbaField(target = "EPMDocument,WTPart", ibaName = "UNIT_MODEL", panelAttr = true)
+    @IbaField(target = "EPMDocument", ibaName = "UNIT_MODEL", panelAttr = true)
     private String unitModel;
     /**
      * cad:重量
      */
     @JacksonXmlProperty(localName = "weight")
-    @IbaField(target = "EPMDocument,WTPart", ibaName = "CMASS", panelAttr = true)
+    @IbaField(target = "EPMDocument", ibaName = "CMASS", panelAttr = true)
     private String weight;
     /**
      * cad:关键件标识
      */
     @JacksonXmlProperty(localName = "keyIdentity")
-    @IbaField(target = "EPMDocument,WTPart", ibaName = "KEY_PART_ID", panelAttr = true)
+    @IbaField(target = "EPMDocument", ibaName = "KEY_PART_ID", panelAttr = true)
     private String keyIdentity;
     /**
      * cad:比例
