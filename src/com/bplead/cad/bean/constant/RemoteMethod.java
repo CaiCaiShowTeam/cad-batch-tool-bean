@@ -30,4 +30,10 @@ public class RemoteMethod extends RMIMethod {
 	
 	public static final String CHECKOUT_LISTENNER = "checkoutListener";
 	
+	public static final String SEARCH = "search";
+	
+	public static final String GETPDMINFOS = "getPDMInfos";
+	
+	public static final String GETBOMDETAILS = "getBomDetails";
+	
 }

@@ -9,6 +9,10 @@ public class SimpleDocument extends SimpleObject {
     private CadStatus cadStatus = CadStatus.NOT_EXIST;
 
     private String number;
+    private String version;
+    private String modifyTime;
+    private String creator;
+
 
     public SimpleDocument() {
     }
@@ -18,29 +22,50 @@ public class SimpleDocument extends SimpleObject {
 	this.number = number;
     }
 
-    public String getNumber() {
-	return number;
-    }
-
-    public void setNumber(String number) {
-	this.number = number;
-    }
-
     public CadStatus getCadStatus() {
         return cadStatus;
     }
 
-    public void setCadStatus(CadStatus cadStatus) {
+    public String getCreator() {
+		return creator;
+	}
+
+    public String getModifyTime() {
+		return modifyTime;
+	}
+
+    public String getNumber() {
+	return number;
+    }
+
+    public String getVersion() {
+		return version;
+	}
+
+	public void setCadStatus(CadStatus cadStatus) {
         this.cadStatus = cadStatus;
     }
 
-    @Override
-    public String toString() {
-	StringBuilder builder = new StringBuilder ();
-	builder.append ("SimpleDocument [cadStatus=").append (cadStatus).append (", number=").append (number)
-		.append (", getName()=").append (getName ()).append (", getOid()=").append (getOid ())
-		.append (", isSelected()=").append (isSelected ()).append (", hashCode()=").append (hashCode ())
-		.append ("]");
-	return builder.toString ();
+	public void setCreator(String creator) {
+		this.creator = creator;
+	}
+
+	public void setModifyTime(String modifyTime) {
+		this.modifyTime = modifyTime;
+	}
+
+	public void setNumber(String number) {
+	this.number = number;
     }
+
+	public void setVersion(String version) {
+		this.version = version;
+	}
+
+	@Override
+	public String toString() {
+		return "SimpleDocument [cadStatus=" + cadStatus + ", number=" + number + ", version=" + version
+				+ ", modifyTime=" + modifyTime + ", creator=" + creator + "]";
+	}
+
 }
