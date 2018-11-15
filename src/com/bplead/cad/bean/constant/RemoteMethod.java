@@ -30,6 +30,6 @@ public class RemoteMethod extends RMIMethod {
 	
 	public static final String CHECKOUT_LISTENNER = "checkoutListener";
 	
-	public static final String TEST = "test1";
+	public static final String TEST = "test2";
 	
 }
