@@ -90,7 +90,7 @@ public class CadDocument implements DetailModel, AttachmentModel {
     /**
      * cad:附件列表
      */
-    @JacksonXmlProperty(localName = "attachment")
+    @JacksonXmlProperty(localName = "attatchment")
     private List<Attachment> attachments = new ArrayList<Attachment> ();
     /**
      * cad:cad bom details
