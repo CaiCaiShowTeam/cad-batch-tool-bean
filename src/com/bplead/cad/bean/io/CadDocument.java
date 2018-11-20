@@ -29,7 +29,7 @@ public class CadDocument implements DetailModel, AttachmentModel {
      * cad:零部件类型
      */
     @JacksonXmlProperty(localName = "type")
-    @IbaField(target = "EPMDocument", ibaName = "SOURCE_MADE", panelAttr = true)
+    @IbaField(target = "EPMDocument", ibaName = "SOURCE_MADE")
     private String source;
     /**
      * cad:原材料规格/外构件规格 plm:原材料规格
