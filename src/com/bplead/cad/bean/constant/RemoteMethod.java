@@ -36,4 +36,6 @@ public class RemoteMethod extends RMIMethod {
 	
 	public static final String GETBOMDETAILS = "getBomDetails";
 	
+	public static final String VALIDATECOMFIRM = "validateComfirm";
+	
 }
