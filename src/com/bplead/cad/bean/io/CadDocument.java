@@ -16,19 +16,19 @@ public class CadDocument implements DetailModel, AttachmentModel {
     /**
      * cad:图纸代号/外购件图号 plm:代号
      */
-    @JacksonXmlProperty(isAttribute = true, localName = "number")
+    @JacksonXmlProperty(localName = "number")
     @IbaField(target = "EPMDocument", ibaName = "CINDEX")
     private String number;
     /**
      * cad:图纸名称 plm:零部件名称
      */
-    @JacksonXmlProperty(isAttribute = true, localName = "name")
+    @JacksonXmlProperty(localName = "name")
     @IbaField(target = "EPMDocument", ibaName = "CNAME", panelAttr = true)
     private String name;
     /**
      * cad:零部件类型
      */
-    @JacksonXmlProperty(isAttribute = true, localName = "type")
+    @JacksonXmlProperty(localName = "type")
     @IbaField(target = "EPMDocument", ibaName = "SOURCE_MADE", panelAttr = true)
     private String source;
     /**
