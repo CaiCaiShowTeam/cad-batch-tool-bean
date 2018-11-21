@@ -37,5 +37,9 @@ public class RemoteMethod extends RMIMethod {
 	public static final String GETBOMDETAILS = "getBomDetails";
 	
 	public static final String VALIDATECOMFIRM = "validateComfirm";
+	/**
+	 * 调试信息开关
+	 */
+	public static final Boolean VERBOSE = true;
 	
 }
