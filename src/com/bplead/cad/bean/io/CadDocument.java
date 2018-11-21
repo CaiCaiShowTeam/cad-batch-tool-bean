@@ -95,7 +95,7 @@ public class CadDocument implements DetailModel, AttachmentModel {
     /**
      * cad:cad bom details
      */
-    @JacksonXmlProperty(localName = "detail")
+    @JacksonXmlProperty(localName = "Detail")
     private List<CADLink> detail = new ArrayList<CADLink> ();
 
     /*
