@@ -14,7 +14,7 @@ public class CadDocument implements DetailModel, AttachmentModel {
     private static final long serialVersionUID = -7830531959700927185L;
 
     /**
-     * cad:图纸代号/外购件图号 plm:代号
+     * cad:图纸代号  plm:代号
      */
     @JacksonXmlProperty(localName = "number")
     @IbaField(target = "EPMDocument", ibaName = "CINDEX")
@@ -32,17 +32,29 @@ public class CadDocument implements DetailModel, AttachmentModel {
     @IbaField(target = "EPMDocument", ibaName = "SOURCE_MADE")
     private String source;
     /**
-     * cad:原材料规格/外构件规格 plm:原材料规格
+     * cad:原材料规格 plm:原材料规格
      */
     @JacksonXmlProperty(localName = "materialModel")
     @IbaField(target = "EPMDocument", ibaName = "RAW_MAT_SPEC", panelAttr = true)
     private String model;
     /**
-     * cad:原材料代码/图纸代号 plm:原材料物料编码
+     * cad:外构件规格 plm:原材料规格
+     */
+    @JacksonXmlProperty(localName = "buyModel")
+    @IbaField(target = "EPMDocument", ibaName = "RAW_MAT_SPEC", panelAttr = true)
+    private String buyModel;
+    /**
+     * cad:原材料代码 plm:原材料物料编码
      */
     @JacksonXmlProperty(localName = "materialNum")
     @IbaField(target = "EPMDocument", ibaName = "MAT_CODE_YL", panelAttr = true)
     private String material;
+    /**
+     * cad:外购件图号 plm:原材料物料编码
+     */
+    @JacksonXmlProperty(localName = "buyNum")
+    @IbaField(target = "EPMDocument", ibaName = "DRAWING_NO", panelAttr = true)
+    private String bubMaterial;
     /**
      * cad:零件尺寸 plm:source为自制件时，无该属性
      */
@@ -237,17 +249,34 @@ public class CadDocument implements DetailModel, AttachmentModel {
 	this.keyIdentity = keyIdentity;
     }
 
+    public String getBuyModel() {
+        return buyModel;
+    }
+
+    public void setBuyModel(String buyModel) {
+        this.buyModel = buyModel;
+    }
+
+    public String getBubMaterial() {
+        return bubMaterial;
+    }
+
+    public void setBubMaterial(String bubMaterial) {
+        this.bubMaterial = bubMaterial;
+    }
+
     @Override
     public String toString() {
 	StringBuilder builder = new StringBuilder ();
 	builder.append ("CadDocument [number=").append (number).append (", name=").append (name).append (", source=")
-		.append (source).append (", model=").append (model).append (", material=").append (material)
+		.append (source).append (", model=").append (model).append (", buyModel=").append (buyModel)
+		.append (", material=").append (material).append (", bubMaterial=").append (bubMaterial)
 		.append (", partSize=").append (partSize).append (", unitModel=").append (unitModel)
-		.append (", weight=").append (weight).append (", proportion=").append (proportion).append (", sheet=")
-		.append (sheet).append (", pageIndex=").append (pageIndex).append (", pageSize=").append (pageSize)
-		.append (", keyIdentity=").append (keyIdentity).append (", attachments=").append (attachments)
-		.append (", detail=").append (detail).append ("]");
+		.append (", weight=").append (weight).append (", keyIdentity=").append (keyIdentity)
+		.append (", proportion=").append (proportion).append (", sheet=").append (sheet).append (", pageIndex=")
+		.append (pageIndex).append (", pageSize=").append (pageSize).append (", attachments=")
+		.append (attachments).append (", detail=").append (detail).append ("]");
 	return builder.toString ();
     }
-
+    
 }
