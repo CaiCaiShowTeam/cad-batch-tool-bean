@@ -36,7 +36,7 @@ public class CadDocument implements DetailModel, AttachmentModel {
      */
     @JacksonXmlProperty(localName = "materialModel")
     @IbaField(target = "EPMDocument", ibaName = "RAW_MAT_SPEC", panelAttr = true)
-    private String model;
+    private String materialModel;
     /**
      * cad:外构件规格 plm:原材料规格
      */
@@ -48,13 +48,13 @@ public class CadDocument implements DetailModel, AttachmentModel {
      */
     @JacksonXmlProperty(localName = "materialNum")
     @IbaField(target = "EPMDocument", ibaName = "MAT_CODE_YL", panelAttr = true)
-    private String material;
+    private String materialNum;
     /**
      * cad:外购件图号 plm:原材料物料编码
      */
     @JacksonXmlProperty(localName = "buyNum")
     @IbaField(target = "EPMDocument", ibaName = "DRAWING_NO", panelAttr = true)
-    private String bubMaterial;
+    private String buyNum;
     /**
      * cad:零件尺寸 plm:source为自制件时，无该属性
      */
@@ -169,22 +169,6 @@ public class CadDocument implements DetailModel, AttachmentModel {
 	this.source = source;
     }
 
-    public String getModel() {
-	return model;
-    }
-
-    public void setModel(String model) {
-	this.model = model;
-    }
-
-    public String getMaterial() {
-	return material;
-    }
-
-    public void setMaterial(String material) {
-	this.material = material;
-    }
-
     public String getPartSize() {
 	return partSize;
     }
@@ -257,26 +241,32 @@ public class CadDocument implements DetailModel, AttachmentModel {
         this.buyModel = buyModel;
     }
 
-    public String getBubMaterial() {
-        return bubMaterial;
+    public String getMaterialModel() {
+        return materialModel;
     }
 
-    public void setBubMaterial(String bubMaterial) {
-        this.bubMaterial = bubMaterial;
+    public void setMaterialModel(String materialModel) {
+        this.materialModel = materialModel;
     }
 
-    @Override
-    public String toString() {
-	StringBuilder builder = new StringBuilder ();
-	builder.append ("CadDocument [number=").append (number).append (", name=").append (name).append (", source=")
-		.append (source).append (", model=").append (model).append (", buyModel=").append (buyModel)
-		.append (", material=").append (material).append (", bubMaterial=").append (bubMaterial)
-		.append (", partSize=").append (partSize).append (", unitModel=").append (unitModel)
-		.append (", weight=").append (weight).append (", keyIdentity=").append (keyIdentity)
-		.append (", proportion=").append (proportion).append (", sheet=").append (sheet).append (", pageIndex=")
-		.append (pageIndex).append (", pageSize=").append (pageSize).append (", attachments=")
-		.append (attachments).append (", detail=").append (detail).append ("]");
-	return builder.toString ();
+    public String getMaterialNum() {
+        return materialNum;
+    }
+
+    public void setMaterialNum(String materialNum) {
+        this.materialNum = materialNum;
+    }
+
+    public String getBuyNum() {
+        return buyNum;
+    }
+
+    public void setBuyNum(String buyNum) {
+        this.buyNum = buyNum;
+    }
+
+    public void setDetail(List<CADLink> detail) {
+        this.detail = detail;
     }
     
 }
