@@ -40,6 +40,6 @@ public class RemoteMethod extends RMIMethod {
 	/**
 	 * 调试信息开关
 	 */
-	public static final Boolean VERBOSE = true;
+	public static final Boolean VERBOSE = false;
 	
 }
