@@ -87,6 +87,7 @@ public class CadDocument implements DetailModel, AttachmentModel {
     /**
      * cad:图幅
      */
+    @IbaField(target = "EPMDocument,WTPart", ibaName = "图幅")
     @JacksonXmlProperty(localName = "size")
     private String sheet;
     /**
